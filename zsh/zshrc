@@ -1,0 +1,79 @@
+# ==========================================================================
+#                                   _                                      |
+#                                  | |                                     |
+#                           _______| |__  _ __ ___                         |
+#                          |_  / __| '_ \| '__/ __|                        |
+#                           / /\__ \ | | | | | (__                         |
+#                          /___|___/_| |_|_|  \___|                        |
+#                                                                          |
+# ==========================================================================
+
+
+# Preamble {{{
+
+# this makes sure my XDG configs are set, but respects previously set ones
+export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
+export XDG_DATA_HOME=${XDG_DATA_HOME:-$HOME/.local/share}
+export XDG_CACHE_HOME=${XDG_CACHE_HOME:-$HOME/.cache}
+export XDG_STATE_HOME=${XDG_STATE_HOME:-$HOME/.local/state}
+export XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR:-"/run/user/$(id -u)"}
+
+export DOTFILES=${DOTFILES:-~/dotfiles}
+
+# }}}
+
+
+# Setup my prompt  {{{
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+local instant_prompt_file=${XDG_CACHE_HOME}/p10k-instant-prompt-${(%):-%n}.zshzledi
+[[ -r "$instant_prompt_file" ]] && source "$instant_prompt_file"
+# load p10k config if exists
+local p10k_config=${ZDOTDIR}/p10k.zsh
+[[ -r "$p10k_config" ]] && source "$p10k_config"
+
+
+# Antidote
+# Set the root name of the plugins files (.txt and .zsh) antidote will use.
+zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins
+
+
+# Ensure the .zsh_plugins.txt file exists so you can add plugins.
+[[ -f ${zsh_plugins}.txt ]] || touch ${zsh_plugins}.txt
+
+# load antidote with same config on arch with aur/pacman install
+# and on other platforms with git and even brew install
+arch_antidote="/usr/share/zsh-antidote"
+git_antidote="${XDG_DATA_HOME:-${HOME}/.local/share}/antidote"
+brew_antidote="/home/linuxbrew/share/zsh-antidote"
+
+# Determine the Antidote installation directory
+if [[ -d "$arch_antidote" ]]; then
+  ANTIDOTE_DIR="$arch_antidote"
+elif [[ -d "$git_antidote" ]]; then
+  ANTIDOTE_DIR="$git_antidote"
+elif [[ -d "$brew_antidote" ]]; then
+  ANTIDOTE_DIR="$brew_antidote"
+else
+  echo "Antidote not found! Please install Antidote via your preferred method."
+  return
+fi
+# Cleanup intermediate variables
+unset arch_antidote git_antidote brew_antidote
+
+# Lazy-load antidote from its functions directory.
+fpath=(${ANTIDOTE_DIR}/functions $fpath)
+autoload -Uz antidote
+
+
+# Generate a new static file whenever .zsh_plugins.txt is updated.
+if [[ ! ${zsh_plugins}.zsh -nt ${zsh_plugins}.txt ]]; then
+  antidote bundle <${zsh_plugins}.txt >|${zsh_plugins}.zsh
+fi
+
+# Source your static plugins file.
+source ${zsh_plugins}.zsh
+
+# }}}

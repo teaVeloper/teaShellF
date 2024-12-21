@@ -1,0 +1,11 @@
+default_context:
+    full_name: "Bertold Sedlak"
+    author: "Bertold Sedlak"
+    name: "Bertold Sedlak"
+    email: "bertold.sedlak@cyansecurity.com"
+    github_username: "teaVeloper"
+cookiecutters_dir: "/home/"
+replay_dir: "/home/"
+abbreviations:
+    gh: https://github.com/{0}.git
+    bb: https://bitbucket.org/{0}

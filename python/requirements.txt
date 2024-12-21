@@ -1,0 +1,4 @@
+pipx
+ipython
+neovim-remote
+ptpython

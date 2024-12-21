@@ -1,0 +1,13 @@
+# KDE
+.directory
+# vim ----------------
+# # Recorded Sessions
+Session.vim
+# # Undo Files - should be in separate folder anyways
+*.un~
+# # Projectionist Plugin
+.projections.json
+# # tags file from ctags
+tags
+# asdf tool settings
+.tool-versions

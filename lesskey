@@ -1,0 +1,6 @@
+# exit on double escape
+\e\e quit
+# use case insensitive -i  and color -R (from https://github.com/nbeaver/lesskey/blob/master/.lesskey )
+# the #env line is important see https://ascending.wordpress.com/2011/02/11/unix-tip-make-less-more-friendly/
+#env
+LESS = -i -R

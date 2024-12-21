@@ -1,0 +1,9 @@
+cookiecutter
+hatch
+httpie
+invoke
+keyring
+pip-tools
+pipdeptree
+pypi-command-line
+virtualenv

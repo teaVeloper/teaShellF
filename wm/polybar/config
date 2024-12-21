@@ -1,0 +1,29 @@
+[bar/example]
+width = 100%
+height = 30
+background = #222
+foreground = #dfdfdf
+
+font-0 = monospace:size=10
+
+modules-left = xmonad
+modules-center = date
+modules-right = pulseaudio network
+
+[module/xmonad]
+type = internal/xmonad
+label = %title%
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+[module/network]
+type = internal/network
+interface = wlan0
+interval = 3.0
+
+[module/date]
+type = internal/date
+interval = 1
+date = %a %Y-%m-%d %H:%M:%S
+label = %date%

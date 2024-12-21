@@ -1,0 +1,100 @@
+" ==========================================================================
+"                                                                           |
+"                        NVIM Configuration                                 |
+"                                                                           |
+"   Plugins managed via vim-plug https://github.com/junegunn/vim-plug       |
+" ==========================================================================
+
+
+scriptencoding utf-8
+set mouse=
+
+
+" Basic Settings {{{
+
+syntax enable
+set nocompatible          " do not run in legacy vi mode
+set encoding=utf-8
+set ruler                 " show line and column ruler on bottom
+set nonumber              " no line numbers on default
+set hidden                " Allow buffers to be backgrounded without being saved
+set noswapfile            " Prevent vim from creating swap files
+" set scrolloff=999         " Keep the cursor centered in the screen
+set showmatch             " Highlight matching braces
+set splitbelow            " Splits show up below by default
+set splitright            " Splits go to the right by default
+set nohlsearch            " Startup with no search Highlighting - annoys me, can be toggled
+set incsearch             " Start showing results as you type
+set smartcase             " Be smart about case sensitivity when searching
+
+set termguicolors         " Enable termguicolors, as is more beautiful
+
+" Tabsettings
+set tabstop=2
+set softtabstop=2
+set expandtab
+
+set laststatus=2
+let python_highlight_all=1
+
+set wildmenu
+set showmatch
+set wrap
+
+
+set foldmethod=marker     " Set folding on markers by default
+
+
+set undofile              " Persisten Undo Files
+
+augroup pers_undo
+    autocmd!
+    " avoid cluttering with tmp files
+    autocmd BufWritePre /tmp/* setlocal noundofile
+augroup END
+
+" }}}
+
+" Key Bindings {{{
+
+let mapleader = " "  "
+let maplocalleader = "\\"
+
+" Toggle HL Search
+nnoremap <silent> <Leader>h :set invhlsearch<CR>
+" Edit vim settings
+nnoremap <localleader>ev :split $MYVIMRC<cr>
+" Copy and Paste to system buffers
+nnoremap <leader>y "+y
+nnoremap <leader>p "+p
+" copy and paste with x window clipboard
+nnoremap <localleader>y "*y
+nnoremap <localleader>p "*p
+" annoyed me when pressing unintentional.. mauybe will change
+nnoremap Q <nop>
+"Save on <Leader>w to not have to press :
+noremap <Leader>w :write<CR>
+" Accidently running :W for saving shall create desired result
+" Also W command annoyed me
+command! W w
+" Shortcut for fuzzfinder
+" Line number toggles and turn off
+" vertical split
+nnoremap <Leader>v :vs<Enter>
+
+" -- Moving
+" switch visual line and per line movement
+nnoremap j gj
+nnoremap gj j
+nnoremap k gk
+nnoremap gk k
+"  Remap Windows Movements
+inoremap <C-Left> <Esc><c-w>h
+inoremap <C-Down> <Esc><c-w>j
+inoremap <C-Up> <Esc><c-w>k
+inoremap <C-Right> <Esc><c-w>l
+inoremap <C-h> <Esc><c-w>h
+inoremap <C-j> <Esc><c-w>j
+inoremap <C-k> <Esc><c-w>k
+inoremap <C-l> <Esc><c-w>l
+
