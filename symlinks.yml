@@ -1,0 +1,23 @@
+---
+zsh:
+  src: "zsh"
+  dest: "$XDG_CONFIG_HOME/zsh"
+zshenv:
+  src: "zsh/zshenv.zsh"
+  dest: "$HOME/.zshenv"
+vimrc:
+  src: "vim/vimrc"
+  dest: "$HOME/.vimrc"
+kitty:
+  src: "kitty"
+  dest: "$XDG_CONFIG_HOME/kitty"
+git:
+  src: "git"
+  dest: "$XDG_CONFIG_HOME/git"
+ptpython:
+  src: "python/ptpython.config.py"
+  dest: "$XDG_CONFIG_HOME/ptpython/config.py"
+less:
+  src: "lesskey"
+  dest: "$HOME/.lesskey"
+
