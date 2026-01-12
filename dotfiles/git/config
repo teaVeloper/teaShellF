@@ -1,5 +1,5 @@
 [include]
-    path = ~/dotfiles/.private/git.user.conf
+    path = ~/.gitidentity
 
 [credential]
     helper = cache --timeout 7200000
@@ -15,7 +15,7 @@
 
 [core]
     editor = nvim
-    excludesfile = ./ignore
+    excludesfile = ~/.vcs-ignore
 
 [difftool]
     prompt = true
@@ -44,30 +44,9 @@
     file-decoration-style = none
 
 [alias]
-    ; Abbreviations
-    s = status
-    d = diff
-    dt = difftool
-    sw = switch
-    a = add
-    c = commit
-    c = commit --verbose
-    m = merge
-    mt = mergetool
-    co = checkout
-    cob = checkout -b
-    br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
-    ; l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
-    ; Log
-    l = !git log --pretty=format:\"%C(magenta)%h %ad%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]\" --decorate --date=short --abbrev-commit
-    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-    ; Own functions
-    la = "!git config -l | grep alias | cut -c 7- " ; list aliases
     done = !git push origin HEAD
     dune = !git push upstream HEAD
-    base-path = "rev-parse --show-toplevel"
-    ctags = !.git/hooks/ctags
-    au = !git add $(git ls-files -o --exclude-standard)
+
 [help]
 	autocorrect = 20
 
