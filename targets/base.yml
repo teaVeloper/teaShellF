@@ -1,18 +1,36 @@
 links:
-  - src: zsh
-    dest: "$XDG_CONFIG_HOME/zsh"
+  - src: git
+    dest: "$XDG_CONFIG_HOME/git"
+
+  - src: shell/env.sh
+    dest: "$XDG_CONFIG_HOME/teagarden/env.sh"
+
+  - src: git/ignore
+    dest: "$HOME/.vcs-ignore"
+
+  - src: git/identities/private.conf
+    dest: "$HOME/.gitidentity"
 
   - src: zsh/zshenv.zsh
     dest: "$HOME/.zshenv"
+
+  - src: bash/profile.sh
+    dest: "$HOME/.profile"
+
+  - src: bash/bash_profile.sh
+    dest: "$HOME/.bash_profile"
+
+  - src: bash/bashrc
+    dest: "$HOME/.bashrc"
+
+  - src: zsh
+    dest: "$XDG_CONFIG_HOME/zsh"
 
   - src: vim/vimrc
     dest: "$HOME/.vimrc"
 
   - src: kitty
     dest: "$XDG_CONFIG_HOME/kitty"
-
-  - src: git
-    dest: "$XDG_CONFIG_HOME/git"
 
   - src: python/ptpython.config.py
     dest: "$XDG_CONFIG_HOME/ptpython/config.py"
