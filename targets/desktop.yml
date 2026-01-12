@@ -1,0 +1,8 @@
+links:
+  # Qtile (optional)
+  - base: "teagarden"
+    src: "tearoom"
+    dest: "$XDG_CONFIG_HOME/qtile"
+    required: false
+    aliases: ["qtile", "de"]
+

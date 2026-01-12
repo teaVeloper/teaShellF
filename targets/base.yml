@@ -1,0 +1,21 @@
+links:
+  - src: zsh
+    dest: "$XDG_CONFIG_HOME/zsh"
+
+  - src: zsh/zshenv.zsh
+    dest: "$HOME/.zshenv"
+
+  - src: vim/vimrc
+    dest: "$HOME/.vimrc"
+
+  - src: kitty
+    dest: "$XDG_CONFIG_HOME/kitty"
+
+  - src: git
+    dest: "$XDG_CONFIG_HOME/git"
+
+  - src: python/ptpython.config.py
+    dest: "$XDG_CONFIG_HOME/ptpython/config.py"
+
+  - src: lesskey
+    dest: "$HOME/.lesskey"

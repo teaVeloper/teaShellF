@@ -1,0 +1,7 @@
+links:
+  # Neovim distro
+  - base: "teagarden"
+    src: "teacup.nvim"
+    dest: "$XDG_CONFIG_HOME/nvim"
+    required: true
+    aliases: ["nvim"]
