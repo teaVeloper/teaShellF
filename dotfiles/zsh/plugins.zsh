@@ -58,7 +58,6 @@ $ZDOTDIR/local_plugins/history
 $ZDOTDIR/local_plugins/global_alias
 $ZDOTDIR/local_plugins/cursor_mode
 $ZDOTDIR/local_plugins/functions
-$ZDOTDIR/local_plugins/mise
 
 
 
