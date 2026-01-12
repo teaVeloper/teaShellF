@@ -46,6 +46,7 @@
 [alias]
     done = !git push origin HEAD
     dune = !git push upstream HEAD
+    whoami = !git config --show-origin --get-regexp '^user\\.(name|email)$' || true
 
 [help]
 	autocorrect = 20
