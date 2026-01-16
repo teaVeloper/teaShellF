@@ -1,3 +1,15 @@
+---
+meta: # optional, ignored by tooling
+  date: "2026-01-15"
+  version: 1
+  tags: ["base"]
+
+defaults:
+  repo: "teashellf"
+  path: "dotfiles"
+  required: true
+
+
 links:
   - src: git
     dest: "$XDG_CONFIG_HOME/git"
