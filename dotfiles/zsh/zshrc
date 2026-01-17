@@ -22,6 +22,9 @@ local p10k_config="${ZDOTDIR}/p10k.zsh"
 # Root name of the plugins files (.txt and .zsh) antidote will use.
 local zsh_plugins="${ZDOTDIR}/.zsh_plugins"
 
+# set of variables used/needed by plugins
+export _Z_DATA="$XDG_DATA_HOME/z/data"
+
 # Ensure the plugin list exists.
 [[ -f "${zsh_plugins}.txt" ]] || : >| "${zsh_plugins}.txt"
 

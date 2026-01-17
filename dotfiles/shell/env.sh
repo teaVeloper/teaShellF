@@ -32,9 +32,13 @@ export DOTS
 : "${VISUAL:=$EDITOR}"
 export EDITOR VISUAL
 
-# If you like nvim as MANPAGER, keep it; otherwise remove.
 : "${MANPAGER:=nvim +Man!}"
 export MANPAGER
+
+# inputrc
+: "${INPUTRC:=$XDG_CONFIG_HOME/readline/inputrc}"
+export INPUTRC
+
 
 # ---- PATH (minimal + clean) ----
 # Keep this conservative; add language toolchains in shell-specific files if needed.
