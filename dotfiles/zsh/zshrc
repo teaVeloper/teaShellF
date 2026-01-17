@@ -23,7 +23,7 @@ local p10k_config="${ZDOTDIR}/p10k.zsh"
 local zsh_plugins="${ZDOTDIR}/.zsh_plugins"
 
 # set of variables used/needed by plugins
-export _Z_DATA="$XDG_DATA_HOME/z/data"
+export _Z_DATA="$XDG_DATA_HOME/z"
 
 # Ensure the plugin list exists.
 [[ -f "${zsh_plugins}.txt" ]] || : >| "${zsh_plugins}.txt"
