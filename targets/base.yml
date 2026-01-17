@@ -49,3 +49,23 @@ links:
 
   - src: lesskey
     dest: "$HOME/.lesskey"
+
+ensure:
+  dirs:
+    - path: $XDG_CONFIG_HOME/teagarden
+      mode: "0755"
+    - path: $XDG_CONFIG_HOME/zsh
+      mode: "0755"
+    - path: $XDG_STATE_HOME/zsh
+      mode: "0700"
+    - path: $XDG_CONFIG_HOME/readline
+      mode: "0755"
+    - path: $HOME/.local/bin
+      mode: "0755"
+    - path: $HOME/bin
+      mode: "0755"
+  files:
+    - path: $XDG_STATE_HOME/zsh/history
+      mode: "0600"
+    - path: $XDG_CONFIG_HOME/readline/inputrc
+      mode: "0644"
