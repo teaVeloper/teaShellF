@@ -58,6 +58,8 @@ ensure:
       mode: "0755"
     - path: $XDG_STATE_HOME/zsh
       mode: "0700"
+    - path: $XDG_DATA_HOME/z
+      mode: "0700"
     - path: $XDG_CONFIG_HOME/readline
       mode: "0755"
     - path: $HOME/.local/bin
