@@ -13,4 +13,3 @@ links:
   - src: "qtile"
     dest: "$XDG_CONFIG_HOME/qtile"
     aliases: ["qtile", "de"]
-

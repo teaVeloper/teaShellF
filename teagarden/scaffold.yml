@@ -1,0 +1,118 @@
+# scaffold.yml
+#
+# Canonical $HOME layout for exploratory but disciplined work.
+#
+# Design principles:
+# - Top-level folders encode INTENT, not technology.
+# - Exploration is allowed, but contained.
+# - Promotion paths exist (playground → labs → tools/projects → attic).
+# - Knowledge is separated from production.
+# - Topics are not predeclared; they emerge organically.
+#
+# This file defines ONLY the important, stable anchors.
+# Substructure inside these directories is intentionally left flexible.
+
+home:
+  src:
+    comment: >
+      Production-oriented space.
+      Things you build, run, maintain, or could plausibly share.
+      Not a backup, but usually Git-tracked.
+
+    children:
+      teagarden:
+        comment: >
+          Identity-bound environment and personal infrastructure.
+          Dotfiles, keyboard firmware, shell plugins, rituals.
+          Not intended for redistribution.
+
+      tools:
+        comment: >
+          Reusable, non-identity-bound tools.
+          Small utilities, CLIs, helpers used across multiple projects.
+
+      infra:
+        comment: >
+          Declarative infrastructure.
+          Client configs, server roles, automation, IaC.
+          No experiments here.
+
+      projects:
+        comment: >
+          Concrete efforts with a goal.
+          May be work or personal.
+          A project is an effort, not necessarily a repo.
+
+      labs:
+        comment: >
+          Exploratory but directional code.
+          Prototypes, spikes, experiments that may be promoted or deleted.
+
+      attic:
+        comment: >
+          Inactive but preserved code.
+          Finished, deprecated, or archived work kept for reference.
+
+  knowledge:
+    comment: >
+      Understanding-oriented space.
+      Study, notes, reflection, learning artifacts.
+      Intent is comprehension, not execution.
+
+    children:
+      wiki:
+        comment: >
+          Curated, structured, potentially publishable knowledge.
+          Cleaned up, edited, and intentional.
+
+      zettelkasten:
+        comment: >
+          Personal, rough thinking space.
+          Atomic notes, links, ideas.
+          Not public-facing, less refined than wiki.
+
+      uni:
+        comment: >
+          Formal academic context.
+          Courses, exams, thesis work, teaching material.
+          Code may live here if intent is study.
+
+      courses:
+        comment: >
+          Self-directed learning.
+          Books, MOOCs, workshops, guided study outside formal academia.
+
+      deep-study:
+        comment: >
+          Close reading and analysis of primary material.
+          Source code (e.g. kernels, runtimes), specs, foundational texts.
+
+      topics:
+        comment: >
+          Subject domains.
+          Languages, music, hardware, math, security, tea, etc.
+          Grows organically; no predefined taxonomy.
+
+      archive:
+        comment: >
+          Inactive or superseded knowledge.
+          Old notes kept for reference but no longer actively maintained.
+
+  data:
+    comment: >
+      Local datasets and registries.
+      Raw or derived data not owned by a single project.
+      Projects reference data; they do not own it.
+
+  playground:
+    comment: >
+      Disposable but useful scratch space.
+      Temporary experiments, unpacking, quick tests.
+      Safe to delete without ceremony.
+
+  scratch:
+    comment: >
+      Pure junk space.
+      Chaotic, very short-lived, zero expectations.
+      If in doubt, it belongs here.
+
