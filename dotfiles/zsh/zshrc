@@ -54,6 +54,19 @@ else
   print -r -- "antidote not found; skipping plugin load" 1>&2
 fi
 
+# ---- Completion system ----
+autoload -Uz compinit
+
+# Optional: faster + avoids some insecure-dir prompts if you manage perms yourself
+# zstyle ':completion:*' use-cache on
+# zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/zcompcache"
+
+# If you want XDG-ish dump location:
+mkdir -p "$XDG_CACHE_HOME/zsh"
+compinit -d "$XDG_CACHE_HOME/zsh/zcompdump"
+
+# ----
+
 unset arch_antidote git_antidote ANTIDOTE_DIR
 
 # ---- Small interactive env knobs (only if used) ----
