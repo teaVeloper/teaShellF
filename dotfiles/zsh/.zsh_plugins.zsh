@@ -26,8 +26,6 @@ fpath+=( $ZDOTDIR/local_plugins/cursor_mode )
 source $ZDOTDIR/local_plugins/cursor_mode/cursor_mode.plugin.zsh
 fpath+=( $ZDOTDIR/local_plugins/functions )
 source $ZDOTDIR/local_plugins/functions/functions.plugin.zsh
-fpath+=( $ZDOTDIR/local_plugins/mise )
-source $ZDOTDIR/local_plugins/mise/mise.plugin.zsh
 fpath+=( $HOME/.cache/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-romkatv-SLASH-powerlevel10k )
 source $HOME/.cache/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-romkatv-SLASH-powerlevel10k/powerlevel10k.zsh-theme
 source $HOME/.cache/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-romkatv-SLASH-powerlevel10k/powerlevel9k.zsh-theme
